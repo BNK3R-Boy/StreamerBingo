@@ -1,8 +1,18 @@
+
 # StreamerBingo
+[[Github](https://github.com/BNK3R-Boy/StreamerBingo)][[Download](https://github.com/BNK3R-Boy/StreamerBingo/raw/main/StreamerBingo.zip)]
+#### INFO! Update in Planung... _(kann aber dauern)_
 
-Start: _____________________ "StreamerBingo.exe"
+Start: ________________________________ "StreamerBingo.exe"
 
-Start zur Kontrolle: _______ "StreamerBingo.exe 5:12:19:14:16:6:7:9:8:::10:14:30:::0:0:0:1:1:1:0:0:0:::10:33:25"
+Start zur Kontrolle: __________________ "StreamerBingo.exe 5:12:19:14:16:6:7:9:8:::10:14:30:::0:0:0:1:1:1:0:0:0:::10:33:25"
+
+
+#### Wichtige Dateien:
+
+StreamerBingo.exe __________________ das Spiel
+
+triggercontainer20220904.txt _______ der Datensatz
 
 # The Game
 
