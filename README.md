@@ -1,17 +1,6 @@
 
 # StreamerBingo
-[[Github](https://github.com/BNK3R-Boy/StreamerBingo)][[Download](https://github.com/BNK3R-Boy/StreamerBingo/raw/main/StreamerBingo.zip)]
-
-
-[[Virus Total Prüfergebnis](https://www.virustotal.com/gui/file/672520c8ec8a4d9082696efd4ff5b7521439d0d7f1b7a8eb9031df1dc1980144?nocache=1)]
-
-Virus Total Hash: 672520c8ec8a4d9082696efd4ff5b7521439d0d7f1b7a8eb9031df1dc1980144
-
-Datei: StreamerBingo.zip
-
-Size: 605.14 KB
-
-Datum: 2022-09-06 18:09:46 UT
+[[Github](https://github.com/BNK3R-Boy/StreamerBingo)][[Download](https://github.com/BNK3R-Boy/StreamerBingo/raw/main/StreamerBingo.exe)][[Virus Total Prüfergebnis](https://www.virustotal.com/gui/url/29ad4db5ec0e4aa39cdad467b9d04deb1610fa35205d87b6b672ac5609fa2f5b?nocache=1)]
 
 
 
