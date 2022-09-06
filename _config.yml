@@ -2,5 +2,4 @@ theme: jekyll-theme-Dinky
 remote_theme: pages-themes/dinky@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
-releases_url: /BNK3R-Boy/StreamerBingo/raw/main/
-logo: https://user-images.githubusercontent.com/17516608/188402859-e4f49404-c79d-4294-9a24-eba538e54ec9
+title: Streamer Bingo
