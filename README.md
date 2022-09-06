@@ -1,11 +1,28 @@
 
 # StreamerBingo
 [[Github](https://github.com/BNK3R-Boy/StreamerBingo)][[Download](https://github.com/BNK3R-Boy/StreamerBingo/raw/main/StreamerBingo.zip)]
+
+
+[[Virus Total Prüfergebnis](https://www.virustotal.com/gui/file/672520c8ec8a4d9082696efd4ff5b7521439d0d7f1b7a8eb9031df1dc1980144?nocache=1)]
+
+Virus Total Hash: 672520c8ec8a4d9082696efd4ff5b7521439d0d7f1b7a8eb9031df1dc1980144
+
+Datei: StreamerBingo.zip
+
+Size: 605.14 KB
+
+Datum: 2022-09-06 18:09:46 UT
+
+
+
+
 #### INFO! Update in Planung... _(kann aber dauern)_
 
 Start: ________________________________ "StreamerBingo.exe"
 
 Start zur Kontrolle: __________________ "StreamerBingo.exe 5:12:19:14:16:6:7:9:8:::10:14:30:::0:0:0:1:1:1:0:0:0:::10:33:25"
+
+
 
 
 #### Wichtige Dateien:
@@ -28,6 +45,8 @@ Nun nur die Chateingabe auswählen und Einfügen (strg+v) und Enter drücken.
 
 
 Viel Spaß beim Bingo spielen.
+
+
 
 
 # Trigger Container:
