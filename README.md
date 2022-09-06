@@ -1,11 +1,17 @@
-
+theme: Cayman
 # StreamerBingo
-[[Github](https://github.com/BNK3R-Boy/StreamerBingo)][[Download](https://github.com/BNK3R-Boy/StreamerBingo/raw/main/StreamerBingo.zip)]
+[[Github](https://github.com/BNK3R-Boy/StreamerBingo)][[Download](https://github.com/BNK3R-Boy/StreamerBingo/raw/main/StreamerBingo.exe)][[Virus Total Prüfergebnis](https://www.virustotal.com/gui/url/29ad4db5ec0e4aa39cdad467b9d04deb1610fa35205d87b6b672ac5609fa2f5b?nocache=1)]
+
+
+
+
 #### INFO! Update in Planung... _(kann aber dauern)_
 
 Start: ________________________________ "StreamerBingo.exe"
 
 Start zur Kontrolle: __________________ "StreamerBingo.exe 5:12:19:14:16:6:7:9:8:::10:14:30:::0:0:0:1:1:1:0:0:0:::10:33:25"
+
+
 
 
 #### Wichtige Dateien:
@@ -28,6 +34,8 @@ Nun nur die Chateingabe auswählen und Einfügen (strg+v) und Enter drücken.
 
 
 Viel Spaß beim Bingo spielen.
+
+
 
 
 # Trigger Container:
