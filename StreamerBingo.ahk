@@ -3,6 +3,8 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
+If !FileExist(A_ScriptDir . "\triggercontainer20220904.txt")
+	FileInstall, triggercontainer20220904.txt, %A_ScriptDir%\triggercontainer20220904.txt, 0
 
 Loop, %A_ScriptDir%\triggercontainer*.txt, 0, 1
 	Global vURLFile := A_LoopFileFullPath
