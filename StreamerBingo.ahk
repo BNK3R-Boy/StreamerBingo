@@ -2,6 +2,20 @@
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+InfoText =
+(
+
+   writte by
+
+   ██████╗ ███╗   ██╗██╗  ██╗██████╗ ██████╗ ██████╗  ██████╗ ██╗   ██╗
+   ██╔══██╗████╗  ██║██║ ██╔╝╚════██╗██╔══██╗██╔══██╗██╔═══██╗╚██╗ ██╔╝
+   ██████╔╝██╔██╗ ██║█████╔╝  █████╔╝██████╔╝██████╔╝██║   ██║ ╚████╔╝
+   ██╔══██╗██║╚██╗██║██╔═██╗  ╚═══██╗██╔══██╗██╔══██╗██║   ██║  ╚██╔╝
+   ██████╔╝██║ ╚████║██║  ██╗██████╔╝██║  ██║██████╔╝╚██████╔╝   ██║
+   ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝╚═════╝  ╚═════╝    ╚═╝
+
+   on September 2👽22                                                 
+)
 
 If !FileExist(A_ScriptDir . "\triggercontainer20220904.txt")
 	FileInstall, triggercontainer20220904.txt, %A_ScriptDir%\triggercontainer20220904.txt, 0
@@ -22,6 +36,7 @@ FormatTime, ticketTime ,, HH:mm:ss
 
 Menu, Tray, Icon, Shell32.dll, 37
 Menu, Tray, NoStandard
+Menu, Tray, Add, Info, Info
 Menu, Tray, Add, Show / Hide, ShowHide
 Menu, Tray, Add, Exit, Exit
 Menu, Tray, Default, Show / Hide
@@ -155,6 +170,13 @@ CheckBingo(b) {
 		GuiControl, Bingo: Text, e1, %ticketID%
 	}
 }
+
+Info:
+	Gui, Info: Destroy
+	Gui, Info: Font, s8 w300, Courier New
+	Gui, Info: Add, Text, x0 y0 h180 w514 vit1, %InfoText%
+	Gui, Info: Show, h180 w514, Streamer Bingo
+Return
 
 b1:
 b2:
