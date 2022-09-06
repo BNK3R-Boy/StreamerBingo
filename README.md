@@ -6,18 +6,18 @@
 
 #### INFO! Update in Planung... _(kann aber dauern)_
 
-Start: ________________________________ "StreamerBingo.exe"
+Start:   "StreamerBingo.exe"
 
-Start zur Kontrolle: __________________ "StreamerBingo.exe 5:12:19:14:16:6:7:9:8:::10:14:30:::0:0:0:1:1:1:0:0:0:::10:33:25"
+Start zur Kontrolle:   "StreamerBingo.exe 5:12:19:14:16:6:7:9:8:::10:14:30:::0:0:0:1:1:1:0:0:0:::10:33:25"
 
 
 
 
 #### Wichtige Dateien:
 
-StreamerBingo.exe __________________ das Spiel
+StreamerBingo.exe   - das Spiel
 
-triggercontainer20220904.txt _______ der Datensatz
+triggercontainer20220904.txt   - der Datensatz
 
 # The Game
 
