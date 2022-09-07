@@ -40,6 +40,7 @@ Menu, Tray, Add, Info, Info
 Menu, Tray, Add, Show / Hide, ShowHide
 Menu, Tray, Add, Exit, Exit
 Menu, Tray, Default, Show / Hide
+Menu, Tray, Tip, Streamer Bingo
 Gui, Bingo: Destroy
 Gui, Bingo: Font, s10 cBlack, Arial Nova
 Gui, Bingo: Add, Button, x2 y3 w510 h30 vb11 gReload, Reload / Neuer Spielschein
@@ -214,6 +215,7 @@ Reload:
 Return
 
 BingoGuiClose:
+	TrayTip, Streamer Bingo, Streamer Bingo wurde in den Infobereich minimiert. , 5
 	Gui, Bingo: Hide
     ShowHide := 0
 Return
