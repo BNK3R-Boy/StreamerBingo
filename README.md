@@ -64,7 +64,7 @@ Wer ganz sicher gehen möchte, was sich in der Compilierten .EXE befinden, kann 
 
 Dazu klickt Ihr mit rechts auf die StreamerBingo.exe und im Kontextmenü auf 7zip / Öffnen. Navigiert nach StreamerBingo.exe\.rsrc\RCDATA\ und dort findet Ihr die ">AUTOHOTKEY SCRIPT<" Datei, die das Script beinhaltet und die "TRIGGERCONTAINER20220904.TXT" Datei die erzeugt wird.
 
-Mit einem rechts Klick auf Ansehen oder Bearbeiten klicken um den Inhalt zu sehen.
+Mit einem rechts Klick auf die Datei und wieder im Kontextmenü auf Ansehen oder Bearbeiten klicken um den Inhalt zu sehen.
 
 ---
 *"Is it possible to decompile the AHK executable?"*
