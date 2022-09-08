@@ -23,7 +23,7 @@ If !FileExist(A_ScriptDir . "\triggercontainer20220904.txt")
 Loop, %A_ScriptDir%\triggercontainer*.txt, 0, 1
 	Global vURLFile := A_LoopFileFullPath
 
-Global Version := 1.3dev
+Global Version := 1.3 dev
 Global TriggerArray := Object()
 Global TempArray := Object()
 Global RandomTriggerArray := Object()
