@@ -9,7 +9,7 @@
 
 Start:   "StreamerBingo.exe"
 
-Start zur Kontrolle:   "StreamerBingo.exe 5:12:19:14:16:6:7:9:8:::10:14:30:::0:0:0:1:1:1:0:0:0:::10:33:25"
+Start zur Kontrolle:   "StreamerBingo.exe 01:02:03:08:13:04:17:15:05::1662665741:1509:341"
 
 
 
