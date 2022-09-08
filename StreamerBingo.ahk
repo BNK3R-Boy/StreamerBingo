@@ -261,7 +261,7 @@ Return
 Bingo:
 	If Bingo {
         GuiControlGet, cb,, e1
-		ClipBoard := cb
+		ClipBoard := "BINGO! - " . cb
 	}
 Return
 
