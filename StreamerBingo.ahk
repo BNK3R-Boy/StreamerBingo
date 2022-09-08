@@ -23,7 +23,7 @@ If !FileExist(A_ScriptDir . "\triggercontainer20220904.txt")
 Loop, %A_ScriptDir%\triggercontainer*.txt, 0, 1
 	Global vURLFile := A_LoopFileFullPath
 
-Global Version := 1.2
+Global Version := 1.3dev
 Global TriggerArray := Object()
 Global TempArray := Object()
 Global RandomTriggerArray := Object()
@@ -32,7 +32,7 @@ Global Bingo
 Global ticketID
 Global ticketTime
 Global ShowHide := 1
-
+Global CutOffUnixtime := 1662673079
 ticketTime := Human2Unix(A_Now)
 
 Menu, Tray, Icon, Shell32.dll, 37
@@ -64,7 +64,7 @@ ShowHide := 1
 If (!A_Args[1]) {
 	InputBox, CheckStr, Streamer Bingo, Leer lassen oder Cancel zum Spielen.`nZum Prüfen SNr. eingeben.,,,,,,,, %ClipBoard%
 	If !ErrorLevel
-		(CheckStr) ? A_Args[1] := StrReplace(CheckStr, "SNr: ")
+		(CheckStr) ? A_Args[1] := Trim(StrReplace(StrReplace(CheckStr, "BINGO! -"), "SNr: "))
 }
 
 Loop, 9
@@ -84,8 +84,8 @@ If (A_Args[1]) {
 	BCT := StrSplit(StrReplace(A_Args[1], "SNr: "), "::")
 	CT := StrSplit(BCT[1], ":")
 	SP := StrSplit(BCT[2], ":")
-	CTST := Unix2Human(SP[1])
-    ticketTime := SP[1]
+	CTST := Unix2Human(CutOffUnixtime + SP[1])
+    ticketTime := CutOffUnixtime + SP[1]
 	CTHK := StrSplit(dec2bin(SP[3]), "")
 	CTET := GetFormatedTime(SP[2] - 1337)
 	Loop, 9
@@ -217,9 +217,9 @@ CheckBingo(b) {
 		hk := ""
 		Loop, 9
 			hk .= HitArray[A_Index] . l
-		FormatTime, time ,, HH:mm:ss
 		time := Human2Unix(A_Now) - ticketTime + 1337
-		m := ticketID . "::" . ticketTime . ":" . time . ":" . bin2dec(hk)
+		sTT := ticketTime - CutOffUnixtime
+		m := ticketID . "::" . sTT . ":" . time . ":" . bin2dec(hk)
 		GuiControl, Bingo: Text, e1, SNr: %m%
 	} Else {
 		Gui, Bingo: Font, s10 w400 cBlack, Arial Nova
