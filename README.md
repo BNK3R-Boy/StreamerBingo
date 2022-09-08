@@ -1,6 +1,7 @@
 # Streamer Bingo
-[[Download](https://github.com/BNK3R-Boy/StreamerBingo/raw/main/StreamerBingo.exe)][[Virus Total Prüfergebnis](https://www.virustotal.com/gui/url/29ad4db5ec0e4aa39cdad467b9d04deb1610fa35205d87b6b672ac5609fa2f5b?nocache=1)]
+[[Download .exe](https://github.com/BNK3R-Boy/StreamerBingo/raw/main/StreamerBingo.exe)][[Virus Total Prüfergebnis](https://www.virustotal.com/gui/url/29ad4db5ec0e4aa39cdad467b9d04deb1610fa35205d87b6b672ac5609fa2f5b?nocache=1)]
 
+[[Download .zip](https://github.com/BNK3R-Boy/StreamerBingo/raw/main/StreamerBingo.zip)][[Virus Total Prüfergebnis](https://www.virustotal.com/gui/url/9b20b70df153ede6de3ffe07fc8c46f782202d10d94b0aa6d4bd5e437b53242e?nocache=1)]
 
 
 
