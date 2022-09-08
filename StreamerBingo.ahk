@@ -23,6 +23,7 @@ If !FileExist(A_ScriptDir . "\triggercontainer20220904.txt")
 Loop, %A_ScriptDir%\triggercontainer*.txt, 0, 1
 	Global vURLFile := A_LoopFileFullPath
 
+Global Version := 1.1
 Global TriggerArray := Object()
 Global TempArray := Object()
 Global RandomTriggerArray := Object()
@@ -32,7 +33,7 @@ Global ticketID
 Global ticketTime
 Global ShowHide := 1
 
-FormatTime, ticketTime ,, HH:mm:ss
+ticketTime := Human2Unix(A_Now)
 
 Menu, Tray, Icon, Shell32.dll, 37
 Menu, Tray, NoStandard
@@ -57,9 +58,13 @@ Gui, Bingo: Add, Text, x342 yp140 w169 h139 Center border vb8 gb8,
 Gui, Bingo: Add, Text, x342 yp140 w169 h139 Center border vb9 gb9,
 Gui, Bingo: Font, s10 w400 cBlack, Arial Nova
 Gui, Bingo: Add, Button, x2 y519 w510 h60 vb10 gBingo, Noch kein Bingo
-Gui, Bingo: Show, h580 w514, Streamer Bingo
+Gui, Bingo: Show, h580 w514, Streamer Bingo v%Version%
 ShowHide := 1
 
+If (!A_Args[1]) {
+	InputBox, CheckStr, Streamer Bingo, Leer lassen zum Spielen.`nZum Prüfen SNr. eingeben.,,,,,,,,
+	(CheckStr) ? A_Args[1] := StrReplace(CheckStr, "SNr: ")
+}
 
 Loop, 9
 	HitArray[A_Index] := "0"
@@ -75,16 +80,17 @@ While TempArray.Haskey(1) {
 }
 
 If (A_Args[1]) {
-	BCT := StrSplit(A_Args[1], ":::")
+	BCT := StrSplit(StrReplace(A_Args[1], "SNr: "), "::")
 	CT := StrSplit(BCT[1], ":")
-	CTST := BCT[2]
-	CTHK := StrSplit(BCT[3], ":")
-	CTET := BCT[4]
+	SP := StrSplit(BCT[2], ":")
+	CTST := Unix2Human(SP[1])
+    ticketTime := SP[1]
+	CTHK := StrSplit(dec2bin(SP[3]), "")
+	CTET := GetFormatedTime(SP[2] - 1337)
 	Loop, 9
 		If (CTHK[A_Index])
 			GoSub, b%A_Index%
 	Resault := BCT[1] . " ‖ ‖ " . CTST  . " => " . CTET
-    ticketTime := CTST
 }
 
 Loop, 9 { 										; Build TicketID && Buttons
@@ -96,14 +102,38 @@ Loop, 9 { 										; Build TicketID && Buttons
 		}
 
 		l := (A_Index != 9) ? ":" : ""
-        ticketID .= GetTriggerIDbyTrigger(v) . l
+		tid := GetTriggerIDbyTrigger(v)
+		tid := (tid < 10) ? "0" . tid : tid
+        ticketID .= tid . l
 		GuiControl, Bingo: Text, %k%, `n`n%v%
 }
 
-GuiControl, Bingo: Text, e1, % (!Resault) ? ticketID : Resault
-
-
+GuiControl, Bingo: Text, e1, % (Resault) ? "SNr: " . Resault : "SNr: " . ticketID
 Return
+
+dec2bin(dec) {
+    bin := ""
+    count := 0
+	While (dec > 0) {
+		rest := Mod(dec, 2)
+		dec := Floor(dec / 2)
+		bin := rest . bin
+		count++
+	}
+	return bin
+}
+
+bin2dec(bin) {
+	dec := 0
+	count := 0
+	while(bin > 0) {
+		rest := Mod(bin, 2)
+		bin := Floor(bin / 10)
+		dec += rest * (2 ** count)
+		count++
+	}
+	return dec
+}
 
 MyRandom(from, to, quality := 100) {
 	FormatTime, time ,, HHmmss
@@ -122,6 +152,31 @@ GetTriggerIDbyTrigger(trigger) {
 			Return A_Index
 	}
 	Return False
+}
+
+Unix2Human(unixTimestamp) {
+	returnDate = 19700101000000
+	returnDate += unixTimestamp, s
+	FormatTime, returnDate , %returnDate%, dd.MM.yyyy HH:mm:ss
+	return returnDate
+}
+
+Human2Unix(humanTime) {
+	humanTime -= 1970, s
+	return humanTime
+}
+
+GetFormatedTime(s) {
+   w = Tg.-Std.-Min.-Sek.
+   Loop Parse, w, -
+   {
+      x := 60**(4-A_Index) - (A_Index=1)*129600
+      t := s // x
+      s -= t * x
+      If (t or A_Index = 4)
+         m:=m t " " A_LoopField " "
+   }
+   Return m
 }
 
 CheckBingo(b) {
@@ -157,18 +212,17 @@ CheckBingo(b) {
 		GuiControl, Bingo: Font, b10
 		GuiControl, Bingo: Text, b10, %Bingo%x BINGO!
 		hk := ""
-		Loop, 9 {
-			l := (A_Index != 9) ? ":" : ""
+		Loop, 9
 			hk .= HitArray[A_Index] . l
-		}
 		FormatTime, time ,, HH:mm:ss
-		m := "Bingo! Spielscheinnummer: " . ticketID . ":::" . ticketTime . ":::" . hk . ":::" . time
-		GuiControl, Bingo: Text, e1, %m%
+		time := Human2Unix(A_Now) - ticketTime + 1337
+		m := ticketID . "::" . ticketTime . ":" . time . ":" . bin2dec(hk)
+		GuiControl, Bingo: Text, e1, SNr: %m%
 	} Else {
 		Gui, Bingo: Font, s10 w400 cBlack, Arial Nova
 		GuiControl, Bingo: Font, b10
 		GuiControl, Bingo: Text, b10, Noch kein Bingo
-		GuiControl, Bingo: Text, e1, %ticketID%
+		GuiControl, Bingo: Text, e1, SNr: %ticketID%
 	}
 }
 
