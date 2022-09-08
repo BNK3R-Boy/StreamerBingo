@@ -66,4 +66,5 @@ Navigiert nach StreamerBingo.exe\.rsrc\RCDATA\ und dort findet Ihr die ">AUTOHOT
 
 Mit einem rechts Klick auf Ansehen oder Bearbeiten klicken um den Inhalt zu sehen.
 
-"yes it is possible to decompile. you need 7-zip. right-click executable and from 7-zip menu, select "Open as Archive" . after you opened click on RSRC folder. then goto rcdata folder. right-click the file named ">AUTOHOTKEY SCRIPT<" and click "edit" . its the source of the file" - [Is it possible to decompile the AHK executable?](https://www.autohotkey.com/boards/viewtopic.php?p=397453&sid=370e5dd320cf15a3272e8d3b7d855c30#p397453)
+---
+*"Is it possible to decompile the AHK executable?"* - [yes it is possible to decompile. you need 7-zip. right-click executable and from 7-zip menu, select "Open as Archive" . after you opened click on RSRC folder. then goto rcdata folder. right-click the file named ">AUTOHOTKEY SCRIPT<" and click "edit" . its the source of the file](https://www.autohotkey.com/boards/viewtopic.php?p=397453&sid=370e5dd320cf15a3272e8d3b7d855c30#p397453)
