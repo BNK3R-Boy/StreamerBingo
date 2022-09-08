@@ -23,7 +23,7 @@ If !FileExist(A_ScriptDir . "\triggercontainer20220904.txt")
 Loop, %A_ScriptDir%\triggercontainer*.txt, 0, 1
 	Global vURLFile := A_LoopFileFullPath
 
-Global Version := 1.1
+Global Version := 1.2
 Global TriggerArray := Object()
 Global TempArray := Object()
 Global RandomTriggerArray := Object()
@@ -62,8 +62,9 @@ Gui, Bingo: Show, h580 w514, Streamer Bingo v%Version%
 ShowHide := 1
 
 If (!A_Args[1]) {
-	InputBox, CheckStr, Streamer Bingo, Leer lassen zum Spielen.`nZum Prüfen SNr. eingeben.,,,,,,,,
-	(CheckStr) ? A_Args[1] := StrReplace(CheckStr, "SNr: ")
+	InputBox, CheckStr, Streamer Bingo, Leer lassen oder Cancel zum Spielen.`nZum Prüfen SNr. eingeben.,,,,,,,, %ClipBoard%
+	If !ErrorLevel
+		(CheckStr) ? A_Args[1] := StrReplace(CheckStr, "SNr: ")
 }
 
 Loop, 9
@@ -90,7 +91,7 @@ If (A_Args[1]) {
 	Loop, 9
 		If (CTHK[A_Index])
 			GoSub, b%A_Index%
-	Resault := BCT[1] . " ‖ ‖ " . CTST  . " => " . CTET
+	Resault := "Start: " . CTST  . " - Länge: " . CTET
 }
 
 Loop, 9 { 										; Build TicketID && Buttons
@@ -108,7 +109,7 @@ Loop, 9 { 										; Build TicketID && Buttons
 		GuiControl, Bingo: Text, %k%, `n`n%v%
 }
 
-GuiControl, Bingo: Text, e1, % (Resault) ? "SNr: " . Resault : "SNr: " . ticketID
+GuiControl, Bingo: Text, e1, % (Resault) ? Resault : "SNr: " . ticketID
 Return
 
 dec2bin(dec) {
@@ -120,6 +121,8 @@ dec2bin(dec) {
 		bin := rest . bin
 		count++
 	}
+	While, (StrLen(bin) < 9)
+		bin := 0 . bin
 	return bin
 }
 
