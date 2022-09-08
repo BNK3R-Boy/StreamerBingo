@@ -60,9 +60,9 @@ Jede Zeile ist ein Schlagwort.
 
 # Info
 
-Wer ganz sicher gehen möchte, was sich in der Compilierten .EXE sich befinden, kann diese mit 7zip Öffen.
+Wer ganz sicher gehen möchte, was sich in der Compilierten .EXE befinden, kann diese mit 7zip Öffen.
 
-Navigiert nach StreamerBingo.exe\.rsrc\RCDATA\ und dort findet Ihr die ">AUTOHOTKEY SCRIPT<" Datei, die das Script beinhaltet und die "TRIGGERCONTAINER20220904.TXT" Datei die erzeugt wird.
+Dazu klickt Ihr mit rechts auf die StreamerBingo.exe und Öffnet diese mit 7zip. Navigiert nach StreamerBingo.exe\.rsrc\RCDATA\ und dort findet Ihr die ">AUTOHOTKEY SCRIPT<" Datei, die das Script beinhaltet und die "TRIGGERCONTAINER20220904.TXT" Datei die erzeugt wird.
 
 Mit einem rechts Klick auf Ansehen oder Bearbeiten klicken um den Inhalt zu sehen.
 
