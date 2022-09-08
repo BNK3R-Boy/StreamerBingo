@@ -10,9 +10,9 @@
 
 Start:   "StreamerBingo.exe"
 
-Start zur Kontrolle:   "StreamerBingo.exe 01:02:03:08:13:04:17:15:05::1662665741:1509:341"
+Start zur Kontrolle:     v1.2    "StreamerBingo.exe 01:02:03:08:13:04:17:15:05::1662665741:1509:341"
 
-
+Start zur Kontrolle:   v1.3 dev   "StreamerBingo.exe 06:18:02:12:17:14:16:07:03::20:1424:186"
 
 
 #### Wichtige Dateien:
@@ -25,13 +25,16 @@ triggercontainer20220904.txt   - der Datensatz
 
 Startet ganz einfach die App mit einem doppel Klick und schon geht es los. Ihr bekommt einen Spielschein Generiert und Ihr braucht nur noch auf die Schlagworte klicken.
 
+![preview](https://user-images.githubusercontent.com/17516608/188402859-e4f49404-c79d-4294-9a24-eba538e54ec9.png)
+
 Ein Bingo sind 3 in einer Reihe, egal ob horizontal, vertical oder diagonal.
 
 Nach dem Ihr ein Bingo habt klickt Ihr auf den untere "Bingo!" Schaltfläche um das Ergebnis in die Zwischenablage abzulegen.
 
 Nun nur die Chateingabe auswählen und Einfügen (strg+v) und Enter drücken.
 
-![preview](https://user-images.githubusercontent.com/17516608/188402859-e4f49404-c79d-4294-9a24-eba538e54ec9.png)
+![preview](https://user-images.githubusercontent.com/17516608/189213825-e99b19ba-47cb-4b57-9ea9-f7e2989faf8a.png)
+
 
 
 Viel Spaß beim Bingo spielen.
