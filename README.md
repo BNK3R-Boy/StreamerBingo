@@ -10,9 +10,9 @@
 
 Start:   "StreamerBingo.exe"
 
-Start zur Kontrolle:   "StreamerBingo.exe 01:02:03:08:13:04:17:15:05::1662665741:1509:341"
+Start zur Kontrolle:     v1.2    "StreamerBingo.exe 01:02:03:08:13:04:17:15:05::1662665741:1509:341"
 
-
+Start zur Kontrolle:   v1.3 dev   "StreamerBingo.exe 06:18:02:12:17:14:16:07:03::20:1424:186"
 
 
 #### Wichtige Dateien:
