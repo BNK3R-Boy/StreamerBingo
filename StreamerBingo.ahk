@@ -2,6 +2,7 @@
 ; #Warn  ; Enable warnings to assist with detecting common errors.
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+#SingleInstance off
 InfoText =
 (
 
@@ -35,6 +36,8 @@ Global ShowHide := 1
 Global CutOffUnixtime := 1662673079
 ticketTime := Human2Unix(A_Now)
 
+OnExit("exit")
+
 Menu, Tray, Icon, Shell32.dll, 37
 Menu, Tray, NoStandard
 Menu, Tray, Add, Info, Info
@@ -62,9 +65,7 @@ Gui, Bingo: Show, h580 w514, Streamer Bingo v%Version%
 ShowHide := 1
 
 If (!A_Args[1]) {
-	InputBox, CheckStr, Streamer Bingo, Leer lassen oder Cancel zum Spielen.`nZum Prüfen SNr. eingeben.,,,,,,,, %ClipBoard%
-	If !ErrorLevel
-		(CheckStr) ? A_Args[1] := Trim(StrReplace(StrReplace(CheckStr, "BINGO! -"), "SNr: "))
+	A_Args[1] := cb := (InStr(ClipBoard, "::")) ? ClipBoard : ""
 }
 
 Loop, 9
@@ -80,8 +81,13 @@ While TempArray.Haskey(1) {
     RandomTriggerArray.Push(TempArray.RemoveAt(MyRandom(1, TempArray.MaxIndex())))
 }
 
-If (A_Args[1]) {
-	BCT := StrSplit(StrReplace(A_Args[1], "SNr: "), "::")
+If (A_Args[1]) {								; SNr. Checker
+	Loop, % A_args.length() {
+		If InStr(A_Args[A_index], "::") {
+			BCT := StrSplit(Trim(StrReplace(StrReplace(StrReplace(A_Args[A_index], "-"), "BINGO!"), "SNr:")), "::")
+			Break
+		}
+	}
 	CT := StrSplit(BCT[1], ":")
 	SP := StrSplit(BCT[2], ":")
 	CTST := Unix2Human(CutOffUnixtime + SP[1])
@@ -92,6 +98,17 @@ If (A_Args[1]) {
 		If (CTHK[A_Index])
 			GoSub, b%A_Index%
 	Resault := "Start: " . CTST  . " - Länge: " . CTET
+	CheckingBingo := IsBingo()
+	If CheckingBingo {
+		Loop, 9 {
+			b := "b" . A_Index
+			If (!HitArray[A_Index])
+				GuiControl, Bingo: Disable, %b%
+		}
+		GuiControl, Bingo: Disable, e1
+		GuiControl, Bingo: Disable, b10
+		Menu, Tray, Tip, Streamer Bingo (Check)
+	}
 }
 
 Loop, 9 { 										; Build TicketID && Buttons
@@ -192,41 +209,55 @@ CheckBingo(b) {
 		GuiControl, Bingo: Font, b%b%
 		HitArray[b] := 0
 	}
-	Bingo := 0
-	If (HitArray[1] && HitArray[2] && HitArray[3]) ; horizonal
-		Bingo++
-	If (HitArray[4] && HitArray[5] && HitArray[6]) ; horizonal
-		Bingo++
-	If (HitArray[7] && HitArray[8] && HitArray[9]) ; horizonal
-		Bingo++
-	If (HitArray[1] && HitArray[4] && HitArray[7]) ; vertikal
-		Bingo++
-	If (HitArray[2] && HitArray[5] && HitArray[8]) ; vertikal
-		Bingo++
-	If (HitArray[3] && HitArray[6] && HitArray[9]) ; vertikal
-		Bingo++
-	If (HitArray[1] && HitArray[5] && HitArray[9]) ; diagonal
-		Bingo++
-	If (HitArray[3] && HitArray[5] && HitArray[7]) ; diagonal
-		Bingo++
+	
+	Bingo := IsBingo()
 
 	If Bingo {
 		Gui, Bingo: Font, s13 w1000 cBlack, Arial Nova
 		GuiControl, Bingo: Font, b10
 		GuiControl, Bingo: Text, b10, %Bingo%x BINGO!
-		hk := ""
-		Loop, 9
-			hk .= HitArray[A_Index] . l
-		time := Human2Unix(A_Now) - ticketTime + 1337
-		sTT := ticketTime - CutOffUnixtime
-		m := ticketID . "::" . sTT . ":" . time . ":" . bin2dec(hk)
-		GuiControl, Bingo: Text, e1, SNr: %m%
+		GuiControl, Bingo: Text, e1, % "SNr: " . BuildTicketString()
 	} Else {
 		Gui, Bingo: Font, s10 w400 cBlack, Arial Nova
 		GuiControl, Bingo: Font, b10
 		GuiControl, Bingo: Text, b10, Noch kein Bingo
 		GuiControl, Bingo: Text, e1, SNr: %ticketID%
 	}
+}
+
+IsBingo() {
+	h := 0
+	If (HitArray[1] && HitArray[2] && HitArray[3]) ; horizonal
+		h++
+	If (HitArray[4] && HitArray[5] && HitArray[6]) ; horizonal
+		h++
+	If (HitArray[7] && HitArray[8] && HitArray[9]) ; horizonal
+		h++
+	If (HitArray[1] && HitArray[4] && HitArray[7]) ; vertikal
+		h++
+	If (HitArray[2] && HitArray[5] && HitArray[8]) ; vertikal
+		h++
+	If (HitArray[3] && HitArray[6] && HitArray[9]) ; vertikal
+		h++
+	If (HitArray[1] && HitArray[5] && HitArray[9]) ; diagonal
+		h++
+	If (HitArray[3] && HitArray[5] && HitArray[7]) ; diagonal
+		h++
+	Return h
+}
+
+BuildTicketString() {
+		hk := ""
+		Loop, 9
+			hk .= HitArray[A_Index]
+		time := Human2Unix(A_Now) - ticketTime + 1337
+		sTT := ticketTime - CutOffUnixtime
+		m := ticketID . "::" . sTT . ":" . time . ":" . bin2dec(hk)
+		Return m
+}
+
+Exit(exit_reason, exit_code) {
+	GoSub, Exit
 }
 
 Info:
@@ -262,13 +293,21 @@ Bingo:
 	If Bingo {
         GuiControlGet, cb,, e1
 		ClipBoard := "BINGO! - " . cb
+		MsgBox, 0, BINGO!, %cb%`n`nDein Spielscheinnr wurde in der Zwischenablage gespeichert.`nDu kannst ihn nun mit STRG+V in ein Texteingabefeld deiner Wahl einfügen.
 	}
 Return
 
 Reload:
-	MsgBox, 4, Reload / Neuer Spielschein, Bist du Sicher?
+	cb := ClipBoard
+	msg := "Bist du Sicher?"
+	(cb) ? msg := "Dazu wird deine Zwischenablage geleert.`nBist du Sicher?`n`nAktueller Inhalt:`n "" " . cb . " """
+	MsgBox, 4, Reload / Neuer Spielschein, %msg%
 	IfMsgBox, Yes
+	{
+		ClearReload := 1
+		ClipBoard := ""
 		Reload
+	}
 Return
 
 BingoGuiClose:
@@ -278,4 +317,5 @@ BingoGuiClose:
 Return
 
 Exit:
+	(!ClearReload) ? ((!CheckingBingo) ? ClipBoard := BuildTicketString() : ToolTip, Bye Bye)
 	ExitApp
