@@ -3,7 +3,7 @@
 
 [[Download .zip](https://github.com/BNK3R-Boy/StreamerBingo/raw/main/StreamerBingo.zip)][[Virus Total Prüfergebnis](https://www.virustotal.com/gui/url/9b20b70df153ede6de3ffe07fc8c46f782202d10d94b0aa6d4bd5e437b53242e?nocache=1)]
 
-[[Autohotkey Quellcode](https://github.com/BNK3R-Boy/StreamerBingo/blob/main/StreamerBingo.ahk)] v1.3
+[[Autohotkey Quellcode](https://github.com/BNK3R-Boy/StreamerBingo/blob/main/StreamerBingo.ahk)] v1.4 dev
 
 
 

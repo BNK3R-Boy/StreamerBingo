@@ -24,7 +24,7 @@ If !FileExist(A_ScriptDir . "\triggercontainer20220904.txt")
 Loop, %A_ScriptDir%\triggercontainer*.txt, 0, 1
 	Global vURLFile := A_LoopFileFullPath
 
-Global Version := 1.3
+Global Version := 1.4 dev
 Global TriggerArray := Object()
 Global TempArray := Object()
 Global RandomTriggerArray := Object()
@@ -121,7 +121,7 @@ Loop, 9 { 										; Build TicketID && Buttons
 
 		l := (A_Index != 9) ? ":" : ""
 		tid := GetTriggerIDbyTrigger(v)
-		tid := (tid < 10) ? "0" . tid : tid
+		; tid := (tid < 10) ? "0" . tid : tid
         ticketID .= tid . l
 		GuiControl, Bingo: Text, %k%, `n`n%v%
 }
