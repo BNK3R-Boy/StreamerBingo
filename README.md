@@ -1,4 +1,4 @@
-# Streamer Bingo v1.3
+# Streamer Bingo
 [[Download .exe](https://github.com/BNK3R-Boy/StreamerBingo/raw/main/StreamerBingo.exe)][[Virus Total Prüfergebnis](https://www.virustotal.com/gui/url/29ad4db5ec0e4aa39cdad467b9d04deb1610fa35205d87b6b672ac5609fa2f5b?nocache=1)]
 
 [[Download .zip](https://github.com/BNK3R-Boy/StreamerBingo/raw/main/StreamerBingo.zip)][[Virus Total Prüfergebnis](https://www.virustotal.com/gui/url/9b20b70df153ede6de3ffe07fc8c46f782202d10d94b0aa6d4bd5e437b53242e?nocache=1)]
@@ -7,7 +7,17 @@
 
 
 
-#### INFO! Update in Planung... _(kann aber dauern)_
+#### Updates (Aktuelle Version: 1.3)
+
+_Schneller und häufiger als gedacht, tut mir leid._
+
+1.3 - Abwärtsinkompatibel, zu starte veränderung der Spielscheinnummer.
+
+1.4 dev - Abwärtskompatibel mit 1.3
+
+
+
+#### INFO! 
 
 Um das Spiel zu Starten, einfach einen doppel klick auf StreamerBingo.exe.
 
@@ -48,7 +58,6 @@ Viel Spaß beim Bingo spielen.
 
 
 # Trigger Container:
-
 
 triggercontainer20220904.txt
 
