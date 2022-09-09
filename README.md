@@ -9,9 +9,13 @@
 
 #### INFO! Update in Planung... _(kann aber dauern)_
 
-Start								- StreamerBingo.exe
+Um das Spiel zu Starten, einfach einen doppel klick auf StreamerBingo.exe.
 
-Start zur Kontrolle					- StreamerBingo.exe 06:18:02:12:17:14:16:07:03::20:1424:186
+Um einen Spielschein zu Kontrolieren, die Spielscheinnummer in der Zwischenablage speichern und doppel klick auf StreamerBingo.exe
+
+oder eine Verknüpfung anlegen und hinter StreamerBingo.exe die Spielscheinnummer einfügen.
+
+zb: "C:\Users\[Dein Windows Benutzername]\Desktop\StreamerBingo.exe 6:18:2:12:17:14:16:7:3::20:1424:186"
 
 
 
