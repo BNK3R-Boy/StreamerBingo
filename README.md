@@ -9,9 +9,9 @@
 
 #### INFO! Update in Planung... _(kann aber dauern)_
 
-Start:								- StreamerBingo.exe
+Start								- StreamerBingo.exe
 
-Start zur Kontrolle:				- StreamerBingo.exe 06:18:02:12:17:14:16:07:03::20:1424:186
+Start zur Kontrolle					- StreamerBingo.exe 06:18:02:12:17:14:16:07:03::20:1424:186
 
 
 
