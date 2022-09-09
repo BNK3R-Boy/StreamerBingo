@@ -7,13 +7,15 @@
 
 
 
+
 #### Updates (Aktuelle Version: 1.3)
 
 _Schneller und häufiger als gedacht, tut mir leid._
 
-1.3 - Abwärtsinkompatibel, zu starte veränderung der Spielscheinnummer.
+1.3 - Abwärtsinkompatibel, zu starke veränderung an der Spielscheinnummer.
 
 1.4 dev - Abwärtskompatibel mit 1.3
+
 
 
 
@@ -29,11 +31,13 @@ zb: "C:\Users\[Dein Windows Benutzername]\Desktop\StreamerBingo.exe 6:18:2:12:17
 
 
 
+
 #### Wichtige Dateien:
 
 StreamerBingo.exe					- das Spiel
 
 triggercontainer20220904.txt		- der Datensatz
+
 
 
 
@@ -53,7 +57,9 @@ Nun nur die Chateingabe auswählen und Einfügen (strg+v) und Enter drücken.
 
 
 
+
 Viel Spaß beim Bingo spielen.
+
 
 
 
@@ -69,6 +75,7 @@ triggercontainer[Datum].txt (ohne Eckige Klammern)
 Jede Zeile ist ein Schlagwort.
 
 ![preview2](https://user-images.githubusercontent.com/17516608/188405336-263f3edd-4ec2-41ba-8203-154cd050a79e.png)
+
 
 
 
