@@ -6,20 +6,22 @@
 [[Autohotkey Quellcode](https://github.com/BNK3R-Boy/StreamerBingo/blob/main/StreamerBingo.ahk)] v1.3 dev
 
 
+
 #### INFO! Update in Planung... _(kann aber dauern)_
 
-Start:   "StreamerBingo.exe"
+Start:								- StreamerBingo.exe
 
-Start zur Kontrolle:     v1.2    "StreamerBingo.exe 01:02:03:08:13:04:17:15:05::1662665741:1509:341"
+Start zur Kontrolle:				- StreamerBingo.exe 06:18:02:12:17:14:16:07:03::20:1424:186
 
-Start zur Kontrolle:   v1.3 dev   "StreamerBingo.exe 06:18:02:12:17:14:16:07:03::20:1424:186"
 
 
 #### Wichtige Dateien:
 
-StreamerBingo.exe   - das Spiel
+StreamerBingo.exe					- das Spiel
 
-triggercontainer20220904.txt   - der Datensatz
+triggercontainer20220904.txt		- der Datensatz
+
+
 
 # The Game
 
@@ -38,7 +40,6 @@ Nun nur die Chateingabe auswählen und Einfügen (strg+v) und Enter drücken.
 
 
 Viel Spaß beim Bingo spielen.
-
 
 
 
