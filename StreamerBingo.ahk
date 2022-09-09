@@ -65,7 +65,7 @@ Gui, Bingo: Show, h580 w514, Streamer Bingo v%Version%
 ShowHide := 1
 
 If (!A_Args[1]) {
-	A_Args[1] := cb := (InStr(ClipBoard, "::")) ? ClipBoard : ""
+	A_Args[1] := (InStr(ClipBoard, "::")) ? ClipBoard : ""
 }
 
 Loop, 9
