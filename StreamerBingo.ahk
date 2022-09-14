@@ -19,7 +19,7 @@ InfoText =
 )
 
 If !FileExist(A_ScriptDir . "\triggercontainer20220904.txt")
-	FileInstall, triggercontainer20220904.txt, %A_ScriptDir%\triggercontainer20220904.txt, 0
+	FileInstall, triggercontainer20220912Yvraldis.txt, %A_ScriptDir%\triggercontainer20220912Yvraldis.txt, 0
 
 Loop, %A_ScriptDir%\triggercontainer*.txt, 0, 1
 	Global vURLFile := A_LoopFileFullPath
@@ -33,10 +33,10 @@ Global Bingo
 Global ticketID
 Global ticketTime
 Global ShowHide := 1
-Global CutOffUnixtime := 1662673079
+Global CutOffUnixtime := 1663189214
 ticketTime := Human2Unix(A_Now)
 
-OnExit("exit")
+OnExit("FinalExit")
 
 Menu, Tray, Icon, Shell32.dll, 37
 Menu, Tray, NoStandard
@@ -65,11 +65,12 @@ Gui, Bingo: Show, h580 w514, Streamer Bingo v%Version%
 ShowHide := 1
 
 If (!A_Args[1]) {
-	A_Args[1] := (InStr(ClipBoard, "::")) ? ClipBoard : ""
+	A_Args := StrSplit((InStr(ClipBoard, "::")) ? FromReplaceTillTrim(ClipBoard) : "", " ")
 }
 
 Loop, 9
 	HitArray[A_Index] := "0"
+
 
 Loop Read, %vURLFile%
 {
@@ -83,8 +84,8 @@ While TempArray.Haskey(1) {
 
 If (A_Args[1]) {								; SNr. Checker
 	Loop, % A_args.length() {
-		If InStr(A_Args[A_index], "::") {
-			BCT := StrSplit(Trim(StrReplace(StrReplace(StrReplace(A_Args[A_index], "-"), "BINGO!"), "SNr:")), "::")
+		If InStr(A_Args[A_Index], "::") {
+			BCT := StrSplit(FromReplaceTillTrim(A_Args[A_Index]), "::")
 			Break
 		}
 	}
@@ -121,13 +122,16 @@ Loop, 9 { 										; Build TicketID && Buttons
 
 		l := (A_Index != 9) ? ":" : ""
 		tid := GetTriggerIDbyTrigger(v)
-		; tid := (tid < 10) ? "0" . tid : tid
         ticketID .= tid . l
 		GuiControl, Bingo: Text, %k%, `n`n%v%
 }
 
 GuiControl, Bingo: Text, e1, % (Resault) ? Resault : "SNr: " . ticketID
 Return
+
+FromReplaceTillTrim(str) {
+	Return Trim(StrReplace(StrReplace(StrReplace(StrReplace(StrReplace(str, "`r", " "), "`n", " "), "-"), "BINGO!"), "SNr:"))
+}
 
 dec2bin(dec) {
     bin := ""
@@ -256,8 +260,8 @@ BuildTicketString() {
 		Return m
 }
 
-Exit(exit_reason, exit_code) {
-	GoSub, Exit
+FinalExit(exit_reason, exit_code) {
+	GoSub, FinalExit
 }
 
 Info:
@@ -316,6 +320,12 @@ BingoGuiClose:
     ShowHide := 0
 Return
 
+FinalExit:
+	If (!ClearReload && !CheckingBingo) {
+		ClipBoard := BuildTicketString()
+		MsgBox, Spielscheinnr %ClipBoard% wurde in der Zwischenablage gespeichert.
+	}
+Return
+
 Exit:
-	(!ClearReload) ? ((!CheckingBingo) ? ClipBoard := BuildTicketString() : ToolTip, Bye Bye)
 	ExitApp
