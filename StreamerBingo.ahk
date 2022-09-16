@@ -18,13 +18,13 @@ InfoText =
    on September 2👽22                                                 
 )
 
-If !FileExist(A_ScriptDir . "\triggercontainer20220904.txt")
-	FileInstall, triggercontainer20220912Yvraldis.txt, %A_ScriptDir%\triggercontainer20220912Yvraldis.txt, 0
+If !FileExist(A_ScriptDir . "\triggercontainer20220916Yvraldis.txt")
+	FileInstall, triggercontainer20220916Yvraldis.txt, %A_ScriptDir%\triggercontainer20220916Yvraldis.txt, 0
 
 Loop, %A_ScriptDir%\triggercontainer*.txt, 0, 1
 	Global vURLFile := A_LoopFileFullPath
 
-Global Version := 1.4 dev
+Global Version := 1.4
 Global TriggerArray := Object()
 Global TempArray := Object()
 Global RandomTriggerArray := Object()
