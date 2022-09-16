@@ -14,7 +14,7 @@ _Schneller und häufiger als gedacht, tut mir leid._
 
 1.3 - Abwärtsinkompatibel, zu starke veränderung an der Spielscheinnummer.
 
-1.4 dev - Abwärtskompatibel mit 1.3
+1.4 - nicht mehr Abwärtskompatibel
 
 
 
