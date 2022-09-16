@@ -1,20 +1,20 @@
 # Streamer Bingo
+[[Download .zip](https://github.com/BNK3R-Boy/StreamerBingo/raw/main/StreamerBingo.zip)](empfohlen)[[Virus Total Prüfergebnis](https://www.virustotal.com/gui/url/9b20b70df153ede6de3ffe07fc8c46f782202d10d94b0aa6d4bd5e437b53242e?nocache=1)]
+
 [[Download .exe](https://github.com/BNK3R-Boy/StreamerBingo/raw/main/StreamerBingo.exe)][[Virus Total Prüfergebnis](https://www.virustotal.com/gui/url/29ad4db5ec0e4aa39cdad467b9d04deb1610fa35205d87b6b672ac5609fa2f5b?nocache=1)]
 
-[[Download .zip](https://github.com/BNK3R-Boy/StreamerBingo/raw/main/StreamerBingo.zip)][[Virus Total Prüfergebnis](https://www.virustotal.com/gui/url/9b20b70df153ede6de3ffe07fc8c46f782202d10d94b0aa6d4bd5e437b53242e?nocache=1)]
-
-[[Autohotkey Quellcode](https://github.com/BNK3R-Boy/StreamerBingo/blob/main/StreamerBingo.ahk)] v1.4
+[[Autohotkey Quellcode](https://github.com/BNK3R-Boy/StreamerBingo/blob/main/StreamerBingo.ahk)] v1.5
 
 
 
 
-#### Updates (Aktuelle Version: 1.4)
+#### Updates (Aktuelle Version: 1.5)
 
 _Schneller und häufiger als gedacht, tut mir leid._
 
-1.3 - Abwärtsinkompatibel, zu starke veränderung an der Spielscheinnummer.
-
 1.4 - nicht mehr Abwärtskompatibel
+
+1.5 - Abwärtsinkompatibel (Spielschein Sicherheitsmaßnahme)
 
 
 
@@ -23,11 +23,17 @@ _Schneller und häufiger als gedacht, tut mir leid._
 
 Um das Spiel zu Starten, einfach einen doppel klick auf StreamerBingo.exe.
 
-Um einen Spielschein zu Kontrolieren, die Spielscheinnummer in der Zwischenablage speichern und doppel klick auf StreamerBingo.exe
+Um einen Spielschein zu Kontrolieren, die Spielscheinnummer in der Zwischenablage speichern und doppel klick auf StreamerBingo.exe.
 
-oder eine Verknüpfung anlegen und hinter StreamerBingo.exe die Spielscheinnummer einfügen.
+Ihr könnt auch eine Verknüpfung anlegen und hinter StreamerBingo.exe die Spielscheinnummer und TriggerContainer einfügen.
 
-zb: "C:\Users\[Dein Windows Benutzername]\Desktop\StreamerBingo.exe 6:18:2:12:17:14:16:7:3::20:1424:186"
+zb: "C:\Users\[Dein Windows Benutzername]\Desktop\StreamerBingo.exe 6:18:2:12:17:14:16:7:3::20:1424:186 triggercontainerDatumStreamer.txt"
+
+oder: "C:\Users\[Dein Windows Benutzername]\Desktop\StreamerBingo.exe triggercontainerDatumStreamer.txt 6:18:2:12:17:14:16:7:3::20:1424:186"
+
+oder: "C:\Users\[Dein Windows Benutzername]\Desktop\StreamerBingo.exe 6:18:2:12:17:14:16:7:3::20:1424:186"
+
+oder: "C:\Users\[Dein Windows Benutzername]\Desktop\StreamerBingo.exe triggercontainerDatumStreamer.txt"
 
 
 
@@ -36,25 +42,26 @@ zb: "C:\Users\[Dein Windows Benutzername]\Desktop\StreamerBingo.exe 6:18:2:12:17
 
 StreamerBingo.exe						- das Spiel
 
-triggercontainer20220916Yvraldis.txt	- der Datensatz
+triggercontainerDatumStreamer.txt	- der bzw. die Datensätze
 
 
 
 
-# The Game
+# Das Spiel
 
-Startet ganz einfach die App mit einem doppel Klick und schon geht es los. Ihr bekommt einen Spielschein Generiert und Ihr braucht nur noch auf die Schlagworte klicken.
+Startet ganz einfach die App mit einem doppel Klick und schon geht es los. Wählt eine TriggerContainer Datei aus und schon bekommt Ihr einen Spielschein Generiert und Ihr braucht nur noch auf die Schlagworte klicken.
 
 ![preview](https://user-images.githubusercontent.com/17516608/188402859-e4f49404-c79d-4294-9a24-eba538e54ec9.png)
 
 Ein Bingo sind 3 in einer Reihe, egal ob horizontal, vertical oder diagonal.
 
-Nach dem Ihr ein Bingo habt klickt Ihr auf den untere "Bingo!" Schaltfläche um das Ergebnis in die Zwischenablage abzulegen.
+Das Bingo wird *_NICHT_* Automatisch in einen Chat gesendet.
 
-Nun nur die Chateingabe auswählen und Einfügen (strg+v) und Enter drücken.
+Nach dem Ihr ein Bingo habt klickt Ihr auf den "Bingo!" Schaltfläche um das Ergebnis in die Zwischenablage abzulegen.
+
+Jetzt nur die Chateingabe auswählen und Einfügen (strg+v) und Enter drücken.
 
 ![preview](https://user-images.githubusercontent.com/17516608/189213825-e99b19ba-47cb-4b57-9ea9-f7e2989faf8a.png)
-
 
 
 
@@ -65,11 +72,9 @@ Viel Spaß beim Bingo spielen.
 
 # Trigger Container:
 
-triggercontainer20220904.txt
+triggercontainer[Datum][Streamer].txt (ohne Eckige Klammern)
 
-oder
-
-triggercontainer[Datum].txt (ohne Eckige Klammern)
+zb.: triggercontainer20220904BNK3Rboy.txt
 
 
 Jede Zeile ist ein Schlagwort.
