@@ -8,7 +8,7 @@
 
 
 
-#### Updates (Aktuelle Version: 1.3)
+#### Updates (Aktuelle Version: 1.4)
 
 _Schneller und häufiger als gedacht, tut mir leid._
 
