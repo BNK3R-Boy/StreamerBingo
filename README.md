@@ -55,9 +55,9 @@ Startet ganz einfach die App mit einem doppel Klick und schon geht es los. Wähl
 
 Ein Bingo sind 3 in einer Reihe, egal ob horizontal, vertical oder diagonal.
 
-Das Bingo wird *_NICHT_* Automatisch in einen Chat gesendet.
+Das Bingo wird *NICHT* Automatisch in einen Chat gesendet.
 
-Nach dem Ihr ein Bingo habt klickt Ihr auf den "Bingo!" Schaltfläche um das Ergebnis in die Zwischenablage abzulegen.
+Nach dem Ihr ein Bingo habt klickt Ihr auf die "Bingo!" Schaltfläche um das Ergebnis in die Zwischenablage abzulegen.
 
 Jetzt nur die Chateingabe auswählen und Einfügen (strg+v) und Enter drücken.
 
